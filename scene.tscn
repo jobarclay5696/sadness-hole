@@ -2,12 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cd5xmx41ytmmf" path="res://models/cavemart.blend" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://cxp3uenrd87tw" path="res://crawler carl.tscn" id="1_ulcgi"]
+[ext_resource type="Script" uid="uid://j067xpanp2yr" path="res://mesh-shop.gd" id="2_73fnb"]
+[ext_resource type="Script" uid="uid://dfvdri2i4216q" path="res://shop-area.gd" id="3_5juve"]
 [ext_resource type="PackedScene" uid="uid://tum2an57us6" path="res://models/layerOneAsset/cave1 -col.blend" id="3_3253y"]
 [ext_resource type="PackedScene" uid="uid://bqtwqmpj16mrm" path="res://models/layerOneAsset/Hard_Drive.blend" id="4_u3cyc"]
 [ext_resource type="Script" uid="uid://crgofcx7bgq05" path="res://models/layerOneAsset/pickup.gd" id="5_m7jmp"]
 [ext_resource type="Script" uid="uid://dbhltj56a6nq5" path="res://init_pickup.gd" id="6_y2354"]
 [ext_resource type="PackedScene" uid="uid://blgw1ix4nlcey" path="res://h_u_m_e.tscn" id="7_xlvrw"]
 [ext_resource type="Script" uid="uid://brbto4ju52wpr" path="res://hardcodepickup.gd" id="8_xlvrw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mqjkr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqjkr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3253y"]
 energy_multiplier = 0.0
@@ -40,6 +46,22 @@ volumetric_fog_sky_affect = 0.66
 
 [node name="cavemart" parent="." unique_id=2086272035 instance=ExtResource("1_nxogm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.49794, -0.2402358, -11.874837)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="cavemart" unique_id=1284133138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2830168, 3.157484)
+mesh = SubResource("BoxMesh_mqjkr")
+script = ExtResource("2_73fnb")
+
+[node name="Area3D" type="Area3D" parent="cavemart/CSGMesh3D" unique_id=2015476149]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 0, 0.7, 0)
+script = ExtResource("3_5juve")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cavemart/CSGMesh3D/Area3D" unique_id=1343224828]
+shape = SubResource("BoxShape3D_mqjkr")
+
+[node name="Label3D" type="Label3D" parent="cavemart/CSGMesh3D/Area3D" unique_id=681777593]
+text = " yo motherfucker"
+font_size = 16
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2009740425]
 environment = SubResource("Environment_u3cyc")
