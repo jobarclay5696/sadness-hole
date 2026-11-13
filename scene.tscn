@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://b8xmvje3no11y"]
+
+[ext_resource type="PackedScene" uid="uid://cd5xmx41ytmmf" path="res://models/cavemart.blend" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://cxp3uenrd87tw" path="res://crawler carl.tscn" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://tum2an57us6" path="res://models/layerOneAsset/cave1 -col.blend" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://bqtwqmpj16mrm" path="res://models/layerOneAsset/Hard_Drive.blend" id="4_u3cyc"]
+[ext_resource type="Script" uid="uid://crgofcx7bgq05" path="res://models/layerOneAsset/pickup.gd" id="5_m7jmp"]
+[ext_resource type="Script" uid="uid://dbhltj56a6nq5" path="res://init_pickup.gd" id="6_y2354"]
+[ext_resource type="PackedScene" uid="uid://blgw1ix4nlcey" path="res://h_u_m_e.tscn" id="7_xlvrw"]
+[ext_resource type="Script" uid="uid://brbto4ju52wpr" path="res://hardcodepickup.gd" id="8_xlvrw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3253y"]
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_i3shv"]
+sky_material = SubResource("ProceduralSkyMaterial_3253y")
+
+[sub_resource type="Environment" id="Environment_u3cyc"]
+background_mode = 2
+background_energy_multiplier = 0.39
+sky = SubResource("Sky_i3shv")
+ambient_light_source = 3
+reflected_light_source = 1
+glow_levels/1 = 10.35
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 8.23
+fog_sun_scatter = 0.18
+fog_density = 0.0969
+volumetric_fog_density = 0.0596
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 391.25
+volumetric_fog_ambient_inject = 2.64
+volumetric_fog_sky_affect = 0.66
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3cyc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3cyc"]
+
+[node name="main" type="Node3D" unique_id=1966609771]
+
+[node name="cavemart" parent="." unique_id=2086272035 instance=ExtResource("1_nxogm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.49794, -0.2402358, -11.874837)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2009740425]
+environment = SubResource("Environment_u3cyc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1071575109]
+transform = Transform3D(-0.75236315, -0.574189, -0.32288814, -0.4342772, 0.06376442, 0.89851964, -0.49533132, 0.8162359, -0.2973312, 0, 15.982798, -16.808163)
+visible = false
+light_specular = 5.119
+shadow_enabled = true
+shadow_opacity = 0.5
+directional_shadow_split_1 = 0.0
+directional_shadow_split_2 = 0.329
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1568688130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041353226, -0.11982795, -0.030038834)
+use_collision = true
+size = Vector3(21, 0.22, 36)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D" unique_id=514708082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 8.5)
+size = Vector3(1, 6, 17)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=81515530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.514)
+use_collision = true
+size = Vector3(21, 6, 1)
+material = SubResource("StandardMaterial3D_u3cyc")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D/CSGBox3D2" unique_id=855205862]
+transform = Transform3D(0.0019170071, 4.371138e-08, 1.7280086, 3.4268644, -2.445239e-11, -0.0009666577, 0, 1, -7.553367e-08, 0.0040872097, -2.5979664, -0.056375504)
+operation = 2
+use_collision = true
+radius = 1.4765625
+height = 1.5
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGBox3D2" unique_id=1583253575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2.6296875, 0)
+operation = 2
+size = Vector3(0.94140625, 0.640625, 1.4609375)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=256077604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 8.5)
+size = Vector3(1, 6, 17)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D" unique_id=118294345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 17.5)
+size = Vector3(21, 6, 1)
+
+[node name="crawler carl" parent="." unique_id=1522524984 instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8857675, 1.1380415, -2.9423685)
+
+[node name="cave1 -col" parent="." unique_id=2073940436 instance=ExtResource("3_3253y")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 1.0364903, -1.9273217, -22.164595)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=147103121]
+transform = Transform3D(1, 0, 0, 0, 0.049070388, 0.99879533, 0, -0.99879533, 0.049070388, -16.471283, 3.405006, -12.218264)
+light_color = Color(0.9999997, 0.9660699, 0.7898423, 1)
+light_energy = 11.139
+light_specular = 0.0
+area_attenuation = 0.0
+area_size = Vector2(10, 10)
+
+[node name="Hard_Drive" parent="." unique_id=1810925023 instance=ExtResource("4_u3cyc")]
+transform = Transform3D(-1.0677447e-08, 0, 0.24427153, 0, 0.24427153, 0, -0.24427153, 0, -1.0677447e-08, -16.37381, 1.165236, -12.126565)
+script = ExtResource("5_m7jmp")
+
+[node name="Area3D" type="Area3D" parent="Hard_Drive" unique_id=1832033196]
+script = ExtResource("6_y2354")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hard_Drive/Area3D" unique_id=1901924005]
+transform = Transform3D(6.25, 0, 0, 0, 6.25, 0, 0, 0, 6.25, 0, 0, 0)
+shape = SubResource("BoxShape3D_u3cyc")
+
+[node name="Label3D" type="Label3D" parent="Hard_Drive/Area3D" unique_id=963606787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6320472, 0)
+pixel_size = 0.015
+billboard = 1
+text = "[E] Collect"
+
+[node name="H_U_M_E2" parent="." unique_id=190023044 instance=ExtResource("7_xlvrw")]
+transform = Transform3D(0.8648772, -0.3140312, -0.39162683, 0.49794504, 0.635456, 0.59012395, 0.063544296, -0.7053935, 0.70596194, -28.419, -3.969, -66.558)
+
+[node name="Area3D" type="Area3D" parent="H_U_M_E2" unique_id=501101404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.419107, -3.9685178, -66.557846)
+script = ExtResource("8_xlvrw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="H_U_M_E2/Area3D" unique_id=1272270289]
+transform = Transform3D(6.25, 0, 0, 0, 6.25, 0, 0, 0, 6.25, 0, 0, 0)
+shape = SubResource("BoxShape3D_u3cyc")
+
+[node name="Label3D" type="Label3D" parent="H_U_M_E2/Area3D" unique_id=1024883866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6320472, 0)
+pixel_size = 0.015
+billboard = 1
+text = "[E] Collect"
+
+[connection signal="body_entered" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="H_U_M_E2/Area3D" to="H_U_M_E2/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="H_U_M_E2/Area3D" to="H_U_M_E2/Area3D" method="_on_body_exited"]

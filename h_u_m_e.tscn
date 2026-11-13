@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://blgw1ix4nlcey"]
+
+[ext_resource type="PackedScene" uid="uid://do7a385qa1wv6" path="res://models/layerOneAsset/H.U.M.E.blend" id="1_v4ic1"]
+
+[node name="H_U_M_E" unique_id=190023044 instance=ExtResource("1_v4ic1")]
+
+[node name="Light" parent="." index="2" unique_id=103462448]
+light_energy = 0.0
+
+[node name="Point" parent="." index="3" unique_id=1768516528]
+light_color = Color(0.57768506, 0.629771, 0.9604822, 1)
+light_energy = 3.109

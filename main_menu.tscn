@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://kccn23r0x5u4"]
+
+[ext_resource type="FontFile" uid="uid://di18l1myjkigh" path="res://tt_interphases_pro/TT Interphases Pro Trial Condensed Black.ttf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://ckf04adtj2gpk" path="res://Coward.gd" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://dvbun38kyikg5" path="res://play.gd" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://cqtymjsmvtkm7" path="res://Chimera Hole.png" id="3_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqong"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[node name="MainMenu" type="Control" unique_id=796487681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 225.0
+offset_right = 60.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quit" type="Button" parent="." unique_id=241231362]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 3.897
+anchor_right = 0.5
+anchor_bottom = 3.897
+offset_left = -168.0
+offset_top = -2431.256
+offset_right = 24.0
+offset_bottom = -2363.256
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_pqong")
+text = "Quit"
+script = ExtResource("2_fu7sn")
+
+[node name="Play" type="Button" parent="." unique_id=269294946]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.07300001
+anchor_right = 0.437
+anchor_bottom = 0.07300001
+offset_left = -95.42401
+offset_top = -47.304005
+offset_right = 96.57599
+offset_bottom = 20.695995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_pqong")
+text = "Play"
+script = ExtResource("3_glbon")
+
+[node name="ChimeraHole" type="Sprite2D" parent="." unique_id=1328124226]
+position = Vector2(518, -75.00002)
+scale = Vector2(0.32434896, 0.23541664)
+texture = ExtResource("3_jix8l")
+
+[connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
+[connection signal="pressed" from="Play" to="Quit" method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
