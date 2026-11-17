@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://u8oiy7r2jva3"]
+
+[ext_resource type="Script" uid="uid://bpamrlt0nfwfy" path="res://Inventory/InvSlot.gd" id="1_hniil"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o131s"]
+bg_color = Color(0.20871013, 0.20871016, 0.20871007, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqong"]
+bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jffny"]
+bg_color = Color(0.2520276, 0.25202766, 0.25202754, 1)
+
+[node name="Button" type="Button" unique_id=1479777492 node_paths=PackedStringArray("IconSlot")]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 43.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o131s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pqong")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jffny")
+script = ExtResource("1_hniil")
+IconSlot = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1899314184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+expand_mode = 1

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dbhltj56a6nq5" path="res://init_pickup.gd" id="6_y2354"]
 [ext_resource type="PackedScene" uid="uid://blgw1ix4nlcey" path="res://h_u_m_e.tscn" id="7_xlvrw"]
 [ext_resource type="Script" uid="uid://brbto4ju52wpr" path="res://hardcodepickup.gd" id="8_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://n4gieia6nrhw" path="res://Inventory/dead_rat.tscn" id="12_5c1cw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqjkr"]
 
@@ -157,6 +158,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6320472, 0)
 pixel_size = 0.015
 billboard = 1
 text = "[E] Collect"
+
+[node name="Collectable" parent="." unique_id=1940880077 instance=ExtResource("12_5c1cw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6093469, 0.45786804, -6.435871)
 
 [connection signal="body_entered" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_exited"]
