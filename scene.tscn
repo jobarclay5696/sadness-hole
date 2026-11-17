@@ -45,7 +45,7 @@ volumetric_fog_sky_affect = 0.66
 [node name="main" type="Node3D" unique_id=1966609771]
 
 [node name="cavemart" parent="." unique_id=2086272035 instance=ExtResource("1_nxogm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.49794, -0.2402358, -11.874837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="cavemart" unique_id=1284133138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2830168, 3.157484)
@@ -60,7 +60,7 @@ script = ExtResource("3_5juve")
 shape = SubResource("BoxShape3D_mqjkr")
 
 [node name="Label3D" type="Label3D" parent="cavemart/CSGMesh3D/Area3D" unique_id=681777593]
-text = " yo motherfucker"
+text = " yo"
 font_size = 16
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2009740425]
@@ -125,7 +125,7 @@ area_attenuation = 0.0
 area_size = Vector2(10, 10)
 
 [node name="Hard_Drive" parent="." unique_id=1810925023 instance=ExtResource("4_u3cyc")]
-transform = Transform3D(-1.0677447e-08, 0, 0.24427153, 0, 0.24427153, 0, -0.24427153, 0, -1.0677447e-08, -16.37381, 1.165236, -12.126565)
+transform = Transform3D(-1.0677447e-08, 0, 0.24427153, 0, 0.24427153, 0, -0.24427153, 0, -1.0677447e-08, -16.37381, -0.5109956, -19.38995)
 script = ExtResource("5_m7jmp")
 
 [node name="Area3D" type="Area3D" parent="Hard_Drive" unique_id=1832033196]
