@@ -9,15 +9,13 @@
 [ext_resource type="Script" uid="uid://dbhltj56a6nq5" path="res://init_pickup.gd" id="6_y2354"]
 [ext_resource type="PackedScene" uid="uid://blgw1ix4nlcey" path="res://h_u_m_e.tscn" id="7_xlvrw"]
 [ext_resource type="Script" uid="uid://brbto4ju52wpr" path="res://hardcodepickup.gd" id="8_xlvrw"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://ktcixtj4dooe" path="res://node-shop.gd" id="9_5juve"]
-=======
 [ext_resource type="PackedScene" uid="uid://n4gieia6nrhw" path="res://Inventory/dead_rat.tscn" id="12_5c1cw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqjkr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mqjkr"]
->>>>>>> adcb3be05ee23acd27be33f73a68549a945fe38c
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3253y"]
 energy_multiplier = 0.0
@@ -150,7 +148,6 @@ pixel_size = 0.015
 billboard = 1
 text = "[E] Collect"
 
-<<<<<<< HEAD
 [node name="Node3D" type="Node3D" parent="." unique_id=1422009544]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Node3D" unique_id=1284133138]
@@ -168,10 +165,9 @@ shape = SubResource("BoxShape3D_mqjkr")
 [node name="Label3D" type="Label3D" parent="Node3D/CSGMesh3D/Area3D" unique_id=681777593]
 text = " yo"
 font_size = 16
-=======
+
 [node name="Collectable" parent="." unique_id=1940880077 instance=ExtResource("12_5c1cw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6093469, 0.45786804, -6.435871)
->>>>>>> adcb3be05ee23acd27be33f73a68549a945fe38c
 
 [connection signal="body_entered" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_exited"]
