@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://cxp3uenrd87tw"]
 
 [ext_resource type="Script" uid="uid://b2q6qq6d300p" path="res://Player.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://dgjlkmpdasjdq" path="res://Player/Interaction/PInteractionHandler.gd" id="2_gwgrx"]
+[ext_resource type="Script" uid="uid://dh5ejxifpu271" path="res://Inventory/ItemData.gd" id="3_6t7r3"]
 [ext_resource type="PackedScene" uid="uid://dfjmtl760lt8l" path="res://shop.tscn" id="3_gwgrx"]
+[ext_resource type="PackedScene" uid="uid://n4gieia6nrhw" path="res://Inventory/dead_rat.tscn" id="4_6t7r3"]
+[ext_resource type="Texture2D" uid="uid://rxasuwrgncoh" path="res://Inventory/Screenshot 2026-11-06 at 1.20.26 PM.png" id="4_ygxgu"]
+[ext_resource type="Script" uid="uid://oofcesyv651n" path="res://Inventory/InvHandler.gd" id="5_ygxgu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mqjkr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mqjkr"]
+
+[sub_resource type="Resource" id="Resource_jffny"]
+script = ExtResource("3_6t7r3")
+ItemName = "TestCube"
+Icon = ExtResource("4_ygxgu")
+ItemModelPrefab = ExtResource("4_6t7r3")
+metadata/_custom_type_script = "uid://dh5ejxifpu271"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3shv"]
+radius = 1.8096397
 
 [node name="crawler carl" type="Node3D" unique_id=1522524984]
 
@@ -40,6 +55,56 @@ distance_fade_begin = 1.0
 distance_fade_shadow = 1.0
 distance_fade_length = 1.0
 
+[node name="Interaction Area" type="Area3D" parent="CharacterBody3D" unique_id=1677301097]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_gwgrx")
+ItemTypes = Array[ExtResource("3_6t7r3")]([SubResource("Resource_jffny")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Interaction Area" unique_id=87762390]
+shape = SubResource("SphereShape3D_i3shv")
+
+[node name="Control" type="Control" parent="CharacterBody3D" unique_id=1259876283 node_paths=PackedStringArray("InvGrid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ygxgu")
+ItemSlotsCount = 2
+InvGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="CharacterBody3D/Control" unique_id=590015957]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 284.0
+offset_right = 364.0
+offset_bottom = 519.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody3D/Control/Panel" unique_id=1454672879]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="CharacterBody3D/Control/Panel/MarginContainer" unique_id=1201608301]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1126919849]
 
 [node name="shop" parent="CanvasLayer" unique_id=681361561 instance=ExtResource("3_gwgrx")]
+
+[connection signal="OnItemPickedUp" from="CharacterBody3D/Interaction Area" to="CharacterBody3D/Control" method="PickupItem"]
+[connection signal="body_entered" from="CharacterBody3D/Interaction Area" to="CharacterBody3D/Interaction Area" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="CharacterBody3D/Interaction Area" to="CharacterBody3D/Interaction Area" method="OnObjectExitedArea"]
