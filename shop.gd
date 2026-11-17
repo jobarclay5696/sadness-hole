@@ -7,7 +7,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _input(event):
-	if event.is_action_pressed("use"):
+	if event.is_action_pressed("open"):
 		print("something")
 		visible = !visible
 		#get_tree().change_scene_to_file("res://main_menu.tscn")

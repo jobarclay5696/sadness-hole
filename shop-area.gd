@@ -10,21 +10,22 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	#if hardcodingfunny <= 0:
-		#player_nearby = false
-		#prompt.hide()
+	if hardcodingfunny <= 0:
+		player_nearby = false
+		prompt.hide()
 		
 	if player_nearby and Input.is_action_just_pressed("use"):
+		print("you tried")
 		collect()
 
-func _on_body_entered(_body: Node3D) -> void:
+func _on_body_entered(_body: CSGMesh3D) -> void:
 	hardcodingfunny += 1
 	print("on body entered")
 	player_nearby = true
 	prompt.show()
 	
 
-func _on_body_exited(_body: Node3D) -> void:
+func _on_body_exited(_body: CSGMesh3D) -> void:
 	print("on body exited")
 	player_nearby = false
 	prompt.hide()

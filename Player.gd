@@ -107,7 +107,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			
 			if camera.rotation.x <= 1 and camera.rotation.x >= -1: #and -150 < event.relative.x and event.relative.x < 150 and -150 < event.relative.y and event.relative.y < 150:
-				print(event.relative.y)
+				#print(event.relative.y)
 				#print(event.relative.x)
 				rotate_y(-event.relative.x * 0.002)
 				
