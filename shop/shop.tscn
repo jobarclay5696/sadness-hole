@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dfjmtl760lt8l"]
 
-[ext_resource type="Script" uid="uid://dhqhwhcv012h7" path="res://shop.gd" id="1_e7rdd"]
-[ext_resource type="Script" uid="uid://c28v73kyk50k7" path="res://container.gd" id="2_xqmyw"]
-[ext_resource type="Script" uid="uid://kdicb46x2hak" path="res://shoes.gd" id="3_sw5c6"]
-[ext_resource type="Script" uid="uid://c5gosdvebko40" path="res://riot_shield.gd" id="4_msgp6"]
-[ext_resource type="Script" uid="uid://c1cany60cst7q" path="res://tylenol.gd" id="5_e23gp"]
-[ext_resource type="Script" uid="uid://c7dbx3xthgv5t" path="res://geiger_counter.gd" id="6_rrolr"]
-[ext_resource type="Script" uid="uid://db0yuamqvhdk0" path="res://glock.gd" id="7_gldgk"]
-[ext_resource type="Script" uid="uid://baf1qy1cxe7dj" path="res://bullets.gd" id="8_763b7"]
-[ext_resource type="Script" uid="uid://c3pcxlh5ulwic" path="res://tungsten_cube.gd" id="9_jtxfs"]
+[ext_resource type="Script" uid="uid://dhqhwhcv012h7" path="res://shop/shop.gd" id="1_e7rdd"]
+[ext_resource type="Script" uid="uid://c28v73kyk50k7" path="res://shop/container.gd" id="2_xqmyw"]
+[ext_resource type="Script" uid="uid://kdicb46x2hak" path="res://shop/shoes.gd" id="3_sw5c6"]
+[ext_resource type="Script" uid="uid://c5gosdvebko40" path="res://shop/riot_shield.gd" id="4_bv5vx"]
+[ext_resource type="Script" uid="uid://c1cany60cst7q" path="res://shop/tylenol.gd" id="5_e23gp"]
+[ext_resource type="Script" uid="uid://c7dbx3xthgv5t" path="res://shop/geiger_counter.gd" id="6_rrolr"]
+[ext_resource type="Script" uid="uid://db0yuamqvhdk0" path="res://shop/glock.gd" id="7_gldgk"]
+[ext_resource type="Script" uid="uid://baf1qy1cxe7dj" path="res://shop/bullets.gd" id="8_763b7"]
+[ext_resource type="Script" uid="uid://c3pcxlh5ulwic" path="res://shop/tungsten_cube.gd" id="9_jtxfs"]
 [ext_resource type="Script" uid="uid://nemunc14iktw" path="res://battery.gd" id="10_tuxin"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_posyd"]
@@ -95,7 +95,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_posyd")
 text = "Riot shield
 $84"
-script = ExtResource("4_msgp6")
+script = ExtResource("4_bv5vx")
 
 [node name="Tylenol" type="Button" parent="Control" unique_id=1781267789]
 layout_mode = 1

@@ -2,20 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cd5xmx41ytmmf" path="res://models/cavemart.blend" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://cxp3uenrd87tw" path="res://crawler carl.tscn" id="1_ulcgi"]
-[ext_resource type="Script" uid="uid://dfvdri2i4216q" path="res://shop-area.gd" id="3_5juve"]
 [ext_resource type="PackedScene" uid="uid://tum2an57us6" path="res://models/layerOneAsset/cave1 -col.blend" id="3_3253y"]
 [ext_resource type="PackedScene" uid="uid://bqtwqmpj16mrm" path="res://models/layerOneAsset/Hard_Drive.blend" id="4_u3cyc"]
 [ext_resource type="Script" uid="uid://crgofcx7bgq05" path="res://models/layerOneAsset/pickup.gd" id="5_m7jmp"]
 [ext_resource type="Script" uid="uid://dbhltj56a6nq5" path="res://init_pickup.gd" id="6_y2354"]
 [ext_resource type="PackedScene" uid="uid://blgw1ix4nlcey" path="res://h_u_m_e.tscn" id="7_xlvrw"]
 [ext_resource type="Script" uid="uid://brbto4ju52wpr" path="res://hardcodepickup.gd" id="8_xlvrw"]
-[ext_resource type="Script" uid="uid://ktcixtj4dooe" path="res://node-shop.gd" id="9_5juve"]
+[ext_resource type="PackedScene" uid="uid://de7ssk6dyub76" path="res://shop/shop_interaction.tscn" id="10_5juve"]
 [ext_resource type="PackedScene" uid="uid://n4gieia6nrhw" path="res://Inventory/dead_rat.tscn" id="12_5c1cw"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_mqjkr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mqjkr"]
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3253y"]
 energy_multiplier = 0.0
@@ -43,10 +37,6 @@ volumetric_fog_sky_affect = 0.66
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3cyc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3cyc"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_mqjkr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mqjkr"]
 
 [node name="main" type="Node3D" unique_id=1966609771]
 
@@ -148,26 +138,11 @@ pixel_size = 0.015
 billboard = 1
 text = "[E] Collect"
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1422009544]
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Node3D" unique_id=1284133138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.0016959, -12.842516)
-mesh = SubResource("BoxMesh_mqjkr")
-script = ExtResource("9_5juve")
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGMesh3D" unique_id=2015476149]
-transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 0, 0.70000005, 0)
-script = ExtResource("3_5juve")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGMesh3D/Area3D" unique_id=1343224828]
-shape = SubResource("BoxShape3D_mqjkr")
-
-[node name="Label3D" type="Label3D" parent="Node3D/CSGMesh3D/Area3D" unique_id=681777593]
-text = " yo"
-font_size = 16
-
 [node name="Collectable" parent="." unique_id=1940880077 instance=ExtResource("12_5c1cw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6093469, 0.45786804, -6.435871)
+
+[node name="shop-interaction" parent="." unique_id=538131445 instance=ExtResource("10_5juve")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.292274, 1.0570443, -14.415908)
 
 [connection signal="body_entered" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Hard_Drive/Area3D" to="Hard_Drive/Area3D" method="_on_body_exited"]

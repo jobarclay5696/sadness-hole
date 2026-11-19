@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b2q6qq6d300p" path="res://Player.gd" id="1_a202f"]
 [ext_resource type="Script" uid="uid://dgjlkmpdasjdq" path="res://Player/Interaction/PInteractionHandler.gd" id="2_gwgrx"]
 [ext_resource type="Script" uid="uid://dh5ejxifpu271" path="res://Inventory/ItemData.gd" id="3_6t7r3"]
-[ext_resource type="PackedScene" uid="uid://dfjmtl760lt8l" path="res://shop.tscn" id="3_gwgrx"]
+[ext_resource type="PackedScene" uid="uid://dfjmtl760lt8l" path="res://shop/shop.tscn" id="3_gwgrx"]
 [ext_resource type="PackedScene" uid="uid://n4gieia6nrhw" path="res://Inventory/dead_rat.tscn" id="4_6t7r3"]
 [ext_resource type="Texture2D" uid="uid://rxasuwrgncoh" path="res://Inventory/Screenshot 2026-11-06 at 1.20.26 PM.png" id="4_ygxgu"]
 [ext_resource type="Script" uid="uid://oofcesyv651n" path="res://Inventory/InvHandler.gd" id="5_ygxgu"]

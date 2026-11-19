@@ -1,4 +1,4 @@
-extends CSGMesh3D
+extends Node3D
 
 @onready var area_node: Area3D = $Area3D
 

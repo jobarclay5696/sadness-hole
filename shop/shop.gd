@@ -10,6 +10,12 @@ func _input(event):
 	if event.is_action_pressed("open"):
 		print("something")
 		visible = !visible
+		if visible:
+			# Inventory opened -> Free the mouse cursor to use the inventory
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			# Inventory closed -> Lock the mouse cursor back into the game
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		#get_tree().change_scene_to_file("res://main_menu.tscn")
 
 

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://de7ssk6dyub76"]
+
+[ext_resource type="Script" uid="uid://geod6ufml8hb" path="res://shop/shop_interaction.gd" id="1_iw15e"]
+[ext_resource type="Script" uid="uid://dfvdri2i4216q" path="res://shop/shop-area.gd" id="2_jcwhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqjkr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_posyd"]
+
+[node name="shop-interaction" type="Node3D" unique_id=2109355180]
+script = ExtResource("1_iw15e")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1417806747]
+script = ExtResource("2_jcwhy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1173722535]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_mqjkr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=139339166]
+mesh = SubResource("BoxMesh_posyd")
+
+[node name="Label3D" type="Label3D" parent="Area3D" unique_id=703101091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+text = "PLEASE LORD"
